@@ -39,9 +39,10 @@
   "scripts": {
     "build": "tsc -p . && tsc -p ./tsconfig.module.json",
     "clean": "rimraf lib/ module/",
-    "prepare": "git config --local core.hooksPath .githook && npm run build",
+    "prepare": "git config --local core.hooksPath .githook",
     "prepublishOnly": "npm run clean && npm run build",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "prepack": "npm run build",
     "test": "mocha \"test/**/*.test.ts\"",
     "watch": "tsc -p . --watch"
   },
